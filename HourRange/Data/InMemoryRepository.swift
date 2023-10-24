@@ -2,7 +2,11 @@ import Foundation
 
 
 public class InmemoryTimeRecordRepository: TimeRecordRepository {
-    private var timeRecords = [TimeRecord]()
+    private var timeRecords = [
+        TimeRecord(start: 0, end: 24, hour: 0),
+        TimeRecord(start: 6, end: 18, hour: 12),
+        TimeRecord(start: 5, end: 22, hour: 24)
+    ]
     
     public func getAll() -> [TimeRecord] {
         timeRecords

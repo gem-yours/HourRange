@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="TimeRecordRow" customModule="HourRange" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="128"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="752" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UCc-c9-PZK" userLabel="StartHour">
+                    <rect key="frame" x="16" y="15.999999999999998" width="10.333333333333336" height="20.333333333333329"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="752" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OUl-f3-3BW" userLabel="EndHour">
+                    <rect key="frame" x="16" y="44.333333333333336" width="10.333333333333336" height="20.333333333333336"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="999" verticalCompressionResistancePriority="749" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J8x-P1-omk" userLabel="Hour">
+                    <rect key="frame" x="16" y="76.666666666666671" width="10.333333333333336" height="20.333333333333329"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="J8x-P1-omk" firstAttribute="leading" secondItem="OUl-f3-3BW" secondAttribute="leading" id="2Uc-Dg-gwp"/>
+                <constraint firstItem="UCc-c9-PZK" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="16" id="Crq-c0-yuK"/>
+                <constraint firstItem="J8x-P1-omk" firstAttribute="top" secondItem="OUl-f3-3BW" secondAttribute="bottom" constant="12" id="Hgu-Q8-prr"/>
+                <constraint firstItem="OUl-f3-3BW" firstAttribute="top" secondItem="UCc-c9-PZK" secondAttribute="bottom" constant="8" id="iyv-vJ-F5I"/>
+                <constraint firstItem="UCc-c9-PZK" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="vpx-Tb-AlF"/>
+                <constraint firstItem="OUl-f3-3BW" firstAttribute="leading" secondItem="UCc-c9-PZK" secondAttribute="leading" id="xfr-bN-DSY"/>
+                <constraint firstItem="J8x-P1-omk" firstAttribute="bottom" secondItem="iN0-l3-epB" secondAttribute="bottom" priority="751" constant="-16" id="yQN-nN-c9b"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="endHourLabel" destination="OUl-f3-3BW" id="SDG-ez-dv7"/>
+                <outlet property="hour" destination="J8x-P1-omk" id="9ky-0x-2t3"/>
+                <outlet property="startHourLabel" destination="UCc-c9-PZK" id="dzO-4F-4VD"/>
+            </connections>
+            <point key="canvasLocation" x="138" y="21"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		C62DE6162AE78383000554E7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62DE6152AE78383000554E7 /* AppDelegate.swift */; };
 		C62DE6182AE78383000554E7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62DE6172AE78383000554E7 /* SceneDelegate.swift */; };
-		C62DE61A2AE78383000554E7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62DE6192AE78383000554E7 /* ViewController.swift */; };
+		C62DE61A2AE78383000554E7 /* TimeRecordListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62DE6192AE78383000554E7 /* TimeRecordListViewController.swift */; };
 		C62DE61D2AE78383000554E7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C62DE61B2AE78383000554E7 /* Main.storyboard */; };
 		C62DE61F2AE78387000554E7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C62DE61E2AE78387000554E7 /* Assets.xcassets */; };
 		C62DE6222AE78387000554E7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C62DE6202AE78387000554E7 /* LaunchScreen.storyboard */; };
@@ -17,6 +17,9 @@
 		C62DE64A2AE78473000554E7 /* TimeRecordRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62DE6472AE78473000554E7 /* TimeRecordRepository.swift */; };
 		C62DE64B2AE78473000554E7 /* InMemoryRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62DE6482AE78473000554E7 /* InMemoryRepository.swift */; };
 		C62DE64C2AE78473000554E7 /* TimeRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62DE6492AE78473000554E7 /* TimeRecord.swift */; };
+		C69739012AE78A7800C931F7 /* TimeRecordRow.xib in Resources */ = {isa = PBXBuildFile; fileRef = C69739002AE78A7800C931F7 /* TimeRecordRow.xib */; };
+		C69739032AE78A8A00C931F7 /* TimeRecordRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69739022AE78A8A00C931F7 /* TimeRecordRow.swift */; };
+		C69739072AE78E2F00C931F7 /* TimeRecordListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69739062AE78E2F00C931F7 /* TimeRecordListViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,7 +43,7 @@
 		C62DE6122AE78383000554E7 /* HourRange.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HourRange.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C62DE6152AE78383000554E7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C62DE6172AE78383000554E7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		C62DE6192AE78383000554E7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C62DE6192AE78383000554E7 /* TimeRecordListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeRecordListViewController.swift; sourceTree = "<group>"; };
 		C62DE61C2AE78383000554E7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C62DE61E2AE78387000554E7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C62DE6212AE78387000554E7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -51,6 +54,9 @@
 		C62DE6472AE78473000554E7 /* TimeRecordRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeRecordRepository.swift; sourceTree = "<group>"; };
 		C62DE6482AE78473000554E7 /* InMemoryRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InMemoryRepository.swift; sourceTree = "<group>"; };
 		C62DE6492AE78473000554E7 /* TimeRecord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeRecord.swift; sourceTree = "<group>"; };
+		C69739002AE78A7800C931F7 /* TimeRecordRow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimeRecordRow.xib; sourceTree = "<group>"; };
+		C69739022AE78A8A00C931F7 /* TimeRecordRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeRecordRow.swift; sourceTree = "<group>"; };
+		C69739062AE78E2F00C931F7 /* TimeRecordListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeRecordListViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,10 +107,10 @@
 		C62DE6142AE78383000554E7 /* HourRange */ = {
 			isa = PBXGroup;
 			children = (
+				C69738FE2AE78A0600C931F7 /* UI */,
 				C62DE6462AE78473000554E7 /* Data */,
 				C62DE6152AE78383000554E7 /* AppDelegate.swift */,
 				C62DE6172AE78383000554E7 /* SceneDelegate.swift */,
-				C62DE6192AE78383000554E7 /* ViewController.swift */,
 				C62DE61B2AE78383000554E7 /* Main.storyboard */,
 				C62DE61E2AE78387000554E7 /* Assets.xcassets */,
 				C62DE6202AE78387000554E7 /* LaunchScreen.storyboard */,
@@ -136,6 +142,33 @@
 				C62DE6492AE78473000554E7 /* TimeRecord.swift */,
 			);
 			path = Data;
+			sourceTree = "<group>";
+		};
+		C69738FE2AE78A0600C931F7 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				C69739052AE78E2000C931F7 /* TimeRecordList */,
+				C69739042AE78E1300C931F7 /* TimeRecordRow */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		C69739042AE78E1300C931F7 /* TimeRecordRow */ = {
+			isa = PBXGroup;
+			children = (
+				C69739002AE78A7800C931F7 /* TimeRecordRow.xib */,
+				C69739022AE78A8A00C931F7 /* TimeRecordRow.swift */,
+			);
+			path = TimeRecordRow;
+			sourceTree = "<group>";
+		};
+		C69739052AE78E2000C931F7 /* TimeRecordList */ = {
+			isa = PBXGroup;
+			children = (
+				C62DE6192AE78383000554E7 /* TimeRecordListViewController.swift */,
+				C69739062AE78E2F00C931F7 /* TimeRecordListViewModel.swift */,
+			);
+			path = TimeRecordList;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -242,6 +275,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C69739012AE78A7800C931F7 /* TimeRecordRow.xib in Resources */,
 				C62DE6222AE78387000554E7 /* LaunchScreen.storyboard in Resources */,
 				C62DE61F2AE78387000554E7 /* Assets.xcassets in Resources */,
 				C62DE61D2AE78383000554E7 /* Main.storyboard in Resources */,
@@ -269,11 +303,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C62DE61A2AE78383000554E7 /* ViewController.swift in Sources */,
+				C62DE61A2AE78383000554E7 /* TimeRecordListViewController.swift in Sources */,
 				C62DE64C2AE78473000554E7 /* TimeRecord.swift in Sources */,
 				C62DE6162AE78383000554E7 /* AppDelegate.swift in Sources */,
 				C62DE6182AE78383000554E7 /* SceneDelegate.swift in Sources */,
+				C69739032AE78A8A00C931F7 /* TimeRecordRow.swift in Sources */,
 				C62DE64B2AE78473000554E7 /* InMemoryRepository.swift in Sources */,
+				C69739072AE78E2F00C931F7 /* TimeRecordListViewModel.swift in Sources */,
 				C62DE64A2AE78473000554E7 /* TimeRecordRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
