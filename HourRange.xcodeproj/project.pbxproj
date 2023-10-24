@@ -13,9 +13,7 @@
 		C62DE61D2AE78383000554E7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C62DE61B2AE78383000554E7 /* Main.storyboard */; };
 		C62DE61F2AE78387000554E7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C62DE61E2AE78387000554E7 /* Assets.xcassets */; };
 		C62DE6222AE78387000554E7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C62DE6202AE78387000554E7 /* LaunchScreen.storyboard */; };
-		C62DE62D2AE78387000554E7 /* HourRangeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62DE62C2AE78387000554E7 /* HourRangeTests.swift */; };
-		C62DE6372AE78387000554E7 /* HourRangeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62DE6362AE78387000554E7 /* HourRangeUITests.swift */; };
-		C62DE6392AE78387000554E7 /* HourRangeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62DE6382AE78387000554E7 /* HourRangeUITestsLaunchTests.swift */; };
+		C62DE62D2AE78387000554E7 /* TimeRecordTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62DE62C2AE78387000554E7 /* TimeRecordTest.swift */; };
 		C62DE64A2AE78473000554E7 /* TimeRecordRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62DE6472AE78473000554E7 /* TimeRecordRepository.swift */; };
 		C62DE64B2AE78473000554E7 /* InMemoryRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62DE6482AE78473000554E7 /* InMemoryRepository.swift */; };
 		C62DE64C2AE78473000554E7 /* TimeRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62DE6492AE78473000554E7 /* TimeRecord.swift */; };
@@ -48,10 +46,8 @@
 		C62DE6212AE78387000554E7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C62DE6232AE78387000554E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C62DE6282AE78387000554E7 /* HourRangeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HourRangeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		C62DE62C2AE78387000554E7 /* HourRangeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourRangeTests.swift; sourceTree = "<group>"; };
+		C62DE62C2AE78387000554E7 /* TimeRecordTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeRecordTest.swift; sourceTree = "<group>"; };
 		C62DE6322AE78387000554E7 /* HourRangeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HourRangeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		C62DE6362AE78387000554E7 /* HourRangeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourRangeUITests.swift; sourceTree = "<group>"; };
-		C62DE6382AE78387000554E7 /* HourRangeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourRangeUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		C62DE6472AE78473000554E7 /* TimeRecordRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeRecordRepository.swift; sourceTree = "<group>"; };
 		C62DE6482AE78473000554E7 /* InMemoryRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InMemoryRepository.swift; sourceTree = "<group>"; };
 		C62DE6492AE78473000554E7 /* TimeRecord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeRecord.swift; sourceTree = "<group>"; };
@@ -120,7 +116,7 @@
 		C62DE62B2AE78387000554E7 /* HourRangeTests */ = {
 			isa = PBXGroup;
 			children = (
-				C62DE62C2AE78387000554E7 /* HourRangeTests.swift */,
+				C62DE62C2AE78387000554E7 /* TimeRecordTest.swift */,
 			);
 			path = HourRangeTests;
 			sourceTree = "<group>";
@@ -128,8 +124,6 @@
 		C62DE6352AE78387000554E7 /* HourRangeUITests */ = {
 			isa = PBXGroup;
 			children = (
-				C62DE6362AE78387000554E7 /* HourRangeUITests.swift */,
-				C62DE6382AE78387000554E7 /* HourRangeUITestsLaunchTests.swift */,
 			);
 			path = HourRangeUITests;
 			sourceTree = "<group>";
@@ -288,7 +282,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C62DE62D2AE78387000554E7 /* HourRangeTests.swift in Sources */,
+				C62DE62D2AE78387000554E7 /* TimeRecordTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -296,8 +290,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C62DE6392AE78387000554E7 /* HourRangeUITestsLaunchTests.swift in Sources */,
-				C62DE6372AE78387000554E7 /* HourRangeUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
