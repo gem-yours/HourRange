@@ -10,22 +10,13 @@ public struct TimeRecord: Identifiable, Equatable {
     public var hour: Hour
     
     public var isContained: Bool {
-        switch (start.value - end.value) {
-        case 0:
+        if start == end {
             return start == hour
-        case ..<0:
-            return isContainedWhenStartLesserThanEnd()
-        default:
-            return isContainedWhenStartGreaterThanEnd()
+        } else if start < end {
+            return (start..<end).contains(hour)
+        } else {
+            return !(end..<start).contains(hour)
         }
-    }
-    
-    private func isContainedWhenStartLesserThanEnd() -> Bool {
-        (start..<end).contains(hour)
-    }
-    
-    private func isContainedWhenStartGreaterThanEnd() -> Bool {
-        !(end..<start).contains(hour)
     }
 }
 
@@ -42,7 +33,6 @@ public struct Hour: ExpressibleByIntegerLiteral, Comparable {
     
     public init(integerLiteral value: Int) {
         guard let hour = Hour(value: value) else {
-            // このメソッドはリテラルによる呼び出ししか行われないので、fatalErrorだが許容する
             fatalError("\(value) is invalid.")
         }
         self = hour

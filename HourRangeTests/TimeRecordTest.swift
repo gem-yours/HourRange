@@ -42,8 +42,7 @@ final class TimeRecordTests: XCTestCase {
     }
     
     func testSameHour() {
-        let timeRecord = TimeRecord(start: 0, end: 0, hour: 0)
-        XCTAssertTrue(timeRecord.isContained)
+        XCTAssertTrue(TimeRecord(start: 0, end: 0, hour: 0).isContained)
     }
     
     func testIncludingAllHours() {

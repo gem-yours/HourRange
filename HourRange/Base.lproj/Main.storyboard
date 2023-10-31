@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="MgP-Bp-cIi">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1eB-Gr-B8p">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Time Record List View Controller-->
+        <!--時刻記録の一覧-->
         <scene sceneID="LWZ-e1-9j5">
             <objects>
-                <tableViewController id="MgP-Bp-cIi" customClass="TimeRecordListViewController" customModule="HourRange" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="時刻記録の一覧" id="MgP-Bp-cIi" customClass="TimeRecordListViewController" customModule="HourRange" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="128" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="128" id="eie-lp-Wzg">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -21,10 +22,90 @@
                             <outlet property="prefetchDataSource" destination="MgP-Bp-cIi" id="POL-3h-vfk"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" id="6sp-Gx-FYK"/>
+                    <connections>
+                        <segue destination="pqT-E9-w5e" kind="show" identifier="timeRecordViewController" id="cfH-gp-5dM"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4u0-gZ-GR5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-52" y="-23"/>
+            <point key="canvasLocation" x="779.38931297709917" y="-23.239436619718312"/>
+        </scene>
+        <!--時刻入力-->
+        <scene sceneID="oos-ZD-5lp">
+            <objects>
+                <viewController title="時刻入力" id="pqT-E9-w5e" customClass="TimeRecordViewController" customModule="HourRange" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="WKh-l1-GBy">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="U5Y-4K-4xf">
+                                <rect key="frame" x="0.0" y="103" width="393" height="192"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DgY-Fp-Xar" userLabel="Start Hour" customClass="HourPicker" customModule="HourRange" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="64"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="labelText" value="開始時刻"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="defaultHour" value="0"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="0 ~ 24の数値を入力"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3QP-k4-67H" userLabel="End Hour" customClass="HourPicker" customModule="HourRange" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="64" width="393" height="64"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="labelText" value="終了時刻"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="defaultHour" value="0"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="0 ~ 24の数値を入力"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Oqv-2o-7eb" userLabel="Hour" customClass="HourPicker" customModule="HourRange" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="128" width="393" height="64"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="labelText" value="終了時刻"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="defaultHour" value="0"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="0 ~ 24の数値を入力"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="X7E-SX-yVa"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="U5Y-4K-4xf" firstAttribute="top" secondItem="X7E-SX-yVa" secondAttribute="top" id="8jD-qC-yG0"/>
+                            <constraint firstItem="U5Y-4K-4xf" firstAttribute="leading" secondItem="X7E-SX-yVa" secondAttribute="leading" id="X20-GR-NoI"/>
+                            <constraint firstItem="X7E-SX-yVa" firstAttribute="trailing" secondItem="U5Y-4K-4xf" secondAttribute="trailing" id="cmo-qs-Yhs"/>
+                            <constraint firstItem="X7E-SX-yVa" firstAttribute="bottom" secondItem="U5Y-4K-4xf" secondAttribute="bottom" priority="1" id="xvc-Hc-xbL"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="0DO-sP-LIL">
+                        <barButtonItem key="rightBarButtonItem" title="save" id="Hrr-7g-gw4" userLabel="save"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8nm-yf-5p6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1776.3358778625955" y="-23.239436619718312"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="b4p-1u-k5u">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="1eB-Gr-B8p" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="hbv-WV-5iH">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="MgP-Bp-cIi" kind="relationship" relationship="rootViewController" id="u5V-1T-dpn"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ttw-Ye-rEc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-147.32824427480915" y="-23.239436619718312"/>
         </scene>
     </scenes>
     <resources>

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HourPicker" customModule="HourRange" customModuleProvider="target">
+            <connections>
+                <outlet property="errorLabel" destination="iT9-MS-HB3" id="2VD-Xj-wms"/>
+                <outlet property="label" destination="poQ-nP-ph9" id="KrQ-Kl-KqN"/>
+                <outlet property="textField" destination="VmY-0S-iRV" id="5k0-f7-lDF"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="64"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="xJf-CF-1ca" userLabel="ContentsAndError">
+                    <rect key="frame" x="8" y="0.0" width="377" height="64"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iT9-MS-HB3" userLabel="ErrorLabel">
+                            <rect key="frame" x="0.0" y="0.0" width="50" height="15"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="15" id="V6N-om-jvS"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <color key="textColor" systemColor="systemRedColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="GP3-kZ-84H" userLabel="Contents">
+                            <rect key="frame" x="0.0" y="30" width="377" height="34"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="poQ-nP-ph9" userLabel="Label">
+                                    <rect key="frame" x="0.0" y="0.0" width="4" height="34"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VmY-0S-iRV" userLabel="HourTextField">
+                                    <rect key="frame" x="8" y="0.0" width="369" height="34"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                    <connections>
+                                        <outlet property="delegate" destination="-1" id="GNv-sW-1dU"/>
+                                    </connections>
+                                </textField>
+                            </subviews>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="VmY-0S-iRV" secondAttribute="trailing" id="igG-p0-1Sv"/>
+                            </constraints>
+                        </stackView>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="GP3-kZ-84H" firstAttribute="leading" secondItem="xJf-CF-1ca" secondAttribute="leading" id="Svb-f0-oJS"/>
+                        <constraint firstAttribute="trailing" secondItem="GP3-kZ-84H" secondAttribute="trailing" id="lty-fP-N1c"/>
+                        <constraint firstAttribute="bottom" secondItem="GP3-kZ-84H" secondAttribute="bottom" id="nEd-Wn-b0G"/>
+                    </constraints>
+                </stackView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="xJf-CF-1ca" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="31S-Ju-sCe"/>
+                <constraint firstAttribute="bottom" secondItem="xJf-CF-1ca" secondAttribute="bottom" id="KMm-J4-z5n"/>
+                <constraint firstItem="xJf-CF-1ca" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="jwG-cF-bqI"/>
+                <constraint firstAttribute="trailing" secondItem="xJf-CF-1ca" secondAttribute="trailing" constant="8" id="pDl-9K-rBY"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="51" y="0.0"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

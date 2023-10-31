@@ -17,9 +17,15 @@
 		C62DE64A2AE78473000554E7 /* TimeRecordRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62DE6472AE78473000554E7 /* TimeRecordRepository.swift */; };
 		C62DE64B2AE78473000554E7 /* InMemoryRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62DE6482AE78473000554E7 /* InMemoryRepository.swift */; };
 		C62DE64C2AE78473000554E7 /* TimeRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62DE6492AE78473000554E7 /* TimeRecord.swift */; };
+		C630B2B82AEBF78D00AF56BA /* HourPicker.xib in Resources */ = {isa = PBXBuildFile; fileRef = C630B2B72AEBF78D00AF56BA /* HourPicker.xib */; };
+		C630B2BB2AEBF7AF00AF56BA /* HourPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C630B2BA2AEBF7AF00AF56BA /* HourPicker.swift */; };
+		C63ACC2E2AF0F8B90022E99F /* LoadableFromNib.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63ACC2D2AF0F8B90022E99F /* LoadableFromNib.swift */; };
 		C69739012AE78A7800C931F7 /* TimeRecordRow.xib in Resources */ = {isa = PBXBuildFile; fileRef = C69739002AE78A7800C931F7 /* TimeRecordRow.xib */; };
 		C69739032AE78A8A00C931F7 /* TimeRecordRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69739022AE78A8A00C931F7 /* TimeRecordRow.swift */; };
 		C69739072AE78E2F00C931F7 /* TimeRecordListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69739062AE78E2F00C931F7 /* TimeRecordListViewModel.swift */; };
+		C697390A2AE7A98D00C931F7 /* TimeRecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69739092AE7A98D00C931F7 /* TimeRecordViewController.swift */; };
+		C697390C2AE7AA0400C931F7 /* TimeRecordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C697390B2AE7AA0400C931F7 /* TimeRecordViewModel.swift */; };
+		C697390F2AE7AD1300C931F7 /* UITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C697390E2AE7AD1300C931F7 /* UITest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,9 +60,15 @@
 		C62DE6472AE78473000554E7 /* TimeRecordRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeRecordRepository.swift; sourceTree = "<group>"; };
 		C62DE6482AE78473000554E7 /* InMemoryRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InMemoryRepository.swift; sourceTree = "<group>"; };
 		C62DE6492AE78473000554E7 /* TimeRecord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeRecord.swift; sourceTree = "<group>"; };
+		C630B2B72AEBF78D00AF56BA /* HourPicker.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HourPicker.xib; sourceTree = "<group>"; };
+		C630B2BA2AEBF7AF00AF56BA /* HourPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourPicker.swift; sourceTree = "<group>"; };
+		C63ACC2D2AF0F8B90022E99F /* LoadableFromNib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadableFromNib.swift; sourceTree = "<group>"; };
 		C69739002AE78A7800C931F7 /* TimeRecordRow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimeRecordRow.xib; sourceTree = "<group>"; };
 		C69739022AE78A8A00C931F7 /* TimeRecordRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeRecordRow.swift; sourceTree = "<group>"; };
 		C69739062AE78E2F00C931F7 /* TimeRecordListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeRecordListViewModel.swift; sourceTree = "<group>"; };
+		C69739092AE7A98D00C931F7 /* TimeRecordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeRecordViewController.swift; sourceTree = "<group>"; };
+		C697390B2AE7AA0400C931F7 /* TimeRecordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeRecordViewModel.swift; sourceTree = "<group>"; };
+		C697390E2AE7AD1300C931F7 /* UITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				C69738FE2AE78A0600C931F7 /* UI */,
+				C697390D2AE7AB0B00C931F7 /* Domain */,
 				C62DE6462AE78473000554E7 /* Data */,
 				C62DE6152AE78383000554E7 /* AppDelegate.swift */,
 				C62DE6172AE78383000554E7 /* SceneDelegate.swift */,
@@ -130,6 +143,7 @@
 		C62DE6352AE78387000554E7 /* HourRangeUITests */ = {
 			isa = PBXGroup;
 			children = (
+				C697390E2AE7AD1300C931F7 /* UITest.swift */,
 			);
 			path = HourRangeUITests;
 			sourceTree = "<group>";
@@ -144,9 +158,29 @@
 			path = Data;
 			sourceTree = "<group>";
 		};
+		C630B2B62AEBF76F00AF56BA /* HourPicker */ = {
+			isa = PBXGroup;
+			children = (
+				C630B2B72AEBF78D00AF56BA /* HourPicker.xib */,
+				C630B2BA2AEBF7AF00AF56BA /* HourPicker.swift */,
+			);
+			path = HourPicker;
+			sourceTree = "<group>";
+		};
+		C63ACC2C2AF0F8980022E99F /* extensions */ = {
+			isa = PBXGroup;
+			children = (
+				C63ACC2D2AF0F8B90022E99F /* LoadableFromNib.swift */,
+			);
+			path = extensions;
+			sourceTree = "<group>";
+		};
 		C69738FE2AE78A0600C931F7 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				C63ACC2C2AF0F8980022E99F /* extensions */,
+				C630B2B62AEBF76F00AF56BA /* HourPicker */,
+				C69739082AE7A97700C931F7 /* TimeRecordVIew */,
 				C69739052AE78E2000C931F7 /* TimeRecordList */,
 				C69739042AE78E1300C931F7 /* TimeRecordRow */,
 			);
@@ -169,6 +203,22 @@
 				C69739062AE78E2F00C931F7 /* TimeRecordListViewModel.swift */,
 			);
 			path = TimeRecordList;
+			sourceTree = "<group>";
+		};
+		C69739082AE7A97700C931F7 /* TimeRecordVIew */ = {
+			isa = PBXGroup;
+			children = (
+				C69739092AE7A98D00C931F7 /* TimeRecordViewController.swift */,
+				C697390B2AE7AA0400C931F7 /* TimeRecordViewModel.swift */,
+			);
+			path = TimeRecordVIew;
+			sourceTree = "<group>";
+		};
+		C697390D2AE7AB0B00C931F7 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Domain;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -246,6 +296,7 @@
 					};
 					C62DE6312AE78387000554E7 = {
 						CreatedOnToolsVersion = 14.3.1;
+						LastSwiftMigration = 1430;
 						TestTargetID = C62DE6112AE78383000554E7;
 					};
 				};
@@ -277,6 +328,7 @@
 			files = (
 				C69739012AE78A7800C931F7 /* TimeRecordRow.xib in Resources */,
 				C62DE6222AE78387000554E7 /* LaunchScreen.storyboard in Resources */,
+				C630B2B82AEBF78D00AF56BA /* HourPicker.xib in Resources */,
 				C62DE61F2AE78387000554E7 /* Assets.xcassets in Resources */,
 				C62DE61D2AE78383000554E7 /* Main.storyboard in Resources */,
 			);
@@ -303,14 +355,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C630B2BB2AEBF7AF00AF56BA /* HourPicker.swift in Sources */,
 				C62DE61A2AE78383000554E7 /* TimeRecordListViewController.swift in Sources */,
 				C62DE64C2AE78473000554E7 /* TimeRecord.swift in Sources */,
 				C62DE6162AE78383000554E7 /* AppDelegate.swift in Sources */,
+				C697390C2AE7AA0400C931F7 /* TimeRecordViewModel.swift in Sources */,
+				C63ACC2E2AF0F8B90022E99F /* LoadableFromNib.swift in Sources */,
 				C62DE6182AE78383000554E7 /* SceneDelegate.swift in Sources */,
 				C69739032AE78A8A00C931F7 /* TimeRecordRow.swift in Sources */,
 				C62DE64B2AE78473000554E7 /* InMemoryRepository.swift in Sources */,
 				C69739072AE78E2F00C931F7 /* TimeRecordListViewModel.swift in Sources */,
 				C62DE64A2AE78473000554E7 /* TimeRecordRepository.swift in Sources */,
+				C697390A2AE7A98D00C931F7 /* TimeRecordViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -326,6 +382,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C697390F2AE7AD1300C931F7 /* UITest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -580,6 +637,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 9HQDSCG5Y8;
@@ -588,6 +646,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = ks.HourRangeUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = HourRange;
@@ -598,6 +657,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 9HQDSCG5Y8;

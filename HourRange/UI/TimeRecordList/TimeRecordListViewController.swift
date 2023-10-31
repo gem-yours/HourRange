@@ -11,6 +11,7 @@ class TimeRecordListViewController: UITableViewController {
         tableView.register(UINib(nibName: "TimeRecordRow", bundle: nil), forCellReuseIdentifier: "timeRecordRow")
         tableView.estimatedRowHeight = 128
         tableView.rowHeight = UITableView.automaticDimension
+        self.title = "時刻記録の一覧"
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -24,6 +25,10 @@ class TimeRecordListViewController: UITableViewController {
         timeRecordRow.timeRecord = viewModel.timeRecords[indexPath.row]
         
         return timeRecordRow
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "timeRecordViewController", sender: nil)
     }
 }
 
