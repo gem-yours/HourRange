@@ -19,6 +19,26 @@ class TimeRecordListViewController: UITableViewController {
         tableView.reloadData()
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        switch segue.identifier {
+        case "timeRecordViewController":
+            guard let timeRecordViewController = segue.destination as? TimeRecordViewController else {
+                return
+            }
+            if let index = sender as? Int {
+                timeRecordViewController.viewModel = TimeRecordViewModel(
+                    timeRecord: viewModel.timeRecords[index],
+                    timeRecordRepository: InmemoryTimeRecordRepository.shared
+                )
+            }
+        default:
+            break
+        }
+    }
+}
+
+// MARK: UItableViewDelegate/DataSource
+extension TimeRecordListViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         viewModel.timeRecords.count
     }
@@ -33,7 +53,7 @@ class TimeRecordListViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "timeRecordViewController", sender: nil)
+        performSegue(withIdentifier: "timeRecordViewController", sender: indexPath.row)
     }
 }
 

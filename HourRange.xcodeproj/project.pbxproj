@@ -20,6 +20,7 @@
 		C630B2B82AEBF78D00AF56BA /* HourPicker.xib in Resources */ = {isa = PBXBuildFile; fileRef = C630B2B72AEBF78D00AF56BA /* HourPicker.xib */; };
 		C630B2BB2AEBF7AF00AF56BA /* HourPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C630B2BA2AEBF7AF00AF56BA /* HourPicker.swift */; };
 		C63ACC2E2AF0F8B90022E99F /* LoadableFromNib.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63ACC2D2AF0F8B90022E99F /* LoadableFromNib.swift */; };
+		C666DBFA2AF27BD1005F45B6 /* AddTimeRecordUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C666DBF92AF27BD1005F45B6 /* AddTimeRecordUsecase.swift */; };
 		C69739012AE78A7800C931F7 /* TimeRecordRow.xib in Resources */ = {isa = PBXBuildFile; fileRef = C69739002AE78A7800C931F7 /* TimeRecordRow.xib */; };
 		C69739032AE78A8A00C931F7 /* TimeRecordRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69739022AE78A8A00C931F7 /* TimeRecordRow.swift */; };
 		C69739072AE78E2F00C931F7 /* TimeRecordListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69739062AE78E2F00C931F7 /* TimeRecordListViewModel.swift */; };
@@ -63,6 +64,7 @@
 		C630B2B72AEBF78D00AF56BA /* HourPicker.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HourPicker.xib; sourceTree = "<group>"; };
 		C630B2BA2AEBF7AF00AF56BA /* HourPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourPicker.swift; sourceTree = "<group>"; };
 		C63ACC2D2AF0F8B90022E99F /* LoadableFromNib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadableFromNib.swift; sourceTree = "<group>"; };
+		C666DBF92AF27BD1005F45B6 /* AddTimeRecordUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTimeRecordUsecase.swift; sourceTree = "<group>"; };
 		C69739002AE78A7800C931F7 /* TimeRecordRow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimeRecordRow.xib; sourceTree = "<group>"; };
 		C69739022AE78A8A00C931F7 /* TimeRecordRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeRecordRow.swift; sourceTree = "<group>"; };
 		C69739062AE78E2F00C931F7 /* TimeRecordListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeRecordListViewModel.swift; sourceTree = "<group>"; };
@@ -120,7 +122,7 @@
 			isa = PBXGroup;
 			children = (
 				C69738FE2AE78A0600C931F7 /* UI */,
-				C697390D2AE7AB0B00C931F7 /* Domain */,
+				C697390D2AE7AB0B00C931F7 /* UseCase */,
 				C62DE6462AE78473000554E7 /* Data */,
 				C62DE6152AE78383000554E7 /* AppDelegate.swift */,
 				C62DE6172AE78383000554E7 /* SceneDelegate.swift */,
@@ -214,11 +216,12 @@
 			path = TimeRecordVIew;
 			sourceTree = "<group>";
 		};
-		C697390D2AE7AB0B00C931F7 /* Domain */ = {
+		C697390D2AE7AB0B00C931F7 /* UseCase */ = {
 			isa = PBXGroup;
 			children = (
+				C666DBF92AF27BD1005F45B6 /* AddTimeRecordUsecase.swift */,
 			);
-			path = Domain;
+			path = UseCase;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -357,6 +360,7 @@
 			files = (
 				C630B2BB2AEBF7AF00AF56BA /* HourPicker.swift in Sources */,
 				C62DE61A2AE78383000554E7 /* TimeRecordListViewController.swift in Sources */,
+				C666DBFA2AF27BD1005F45B6 /* AddTimeRecordUsecase.swift in Sources */,
 				C62DE64C2AE78473000554E7 /* TimeRecord.swift in Sources */,
 				C62DE6162AE78383000554E7 /* AppDelegate.swift in Sources */,
 				C697390C2AE7AA0400C931F7 /* TimeRecordViewModel.swift in Sources */,

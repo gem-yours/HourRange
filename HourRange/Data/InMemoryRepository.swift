@@ -13,13 +13,16 @@ public class InmemoryTimeRecordRepository: TimeRecordRepository {
         timeRecords
     }
     
-    public func add(timeRecord: TimeRecord) {
+    public func add(timeRecord: TimeRecord) throws {
+        guard timeRecords.firstIndex(where: { $0.id == timeRecord.id }) == nil else {
+            throw RepositoryError.alreadyExist
+        }
         timeRecords.append(timeRecord)
     }
     
-    public func update(timeRecord: TimeRecord) {
-        guard let index = timeRecords.firstIndex(where: { $0 == timeRecord }) else {
-            return
+    public func update(timeRecord: TimeRecord) throws {
+        guard let index = timeRecords.firstIndex(where: { $0.id == timeRecord.id }) else {
+            throw RepositoryError.notExist
         }
         timeRecords[index] = timeRecord
     }

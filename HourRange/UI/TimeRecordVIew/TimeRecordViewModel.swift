@@ -3,22 +3,35 @@
 import Foundation
 
 public struct TimeRecordViewModel {
-    let timeRecordRepository: TimeRecordRepository
+    public private(set) var timeRecord: TimeRecord
+    private let timeRecordRepository: TimeRecordRepository
     weak var timeRecordView: TimeRecordView?
     
-    init(timeRecordRepository: TimeRecordRepository) {
+    init(
+        timeRecord: TimeRecord? = nil,
+        timeRecordRepository: TimeRecordRepository
+        
+    ) {
+        self.timeRecord = timeRecord ?? TimeRecord(start: 0, end: 0, hour: 0)
         self.timeRecordRepository = timeRecordRepository
     }
     
-    func save() {
+    mutating func save() {
         guard let startHour = Hour(value: Int(timeRecordView?.startHour)),
               let endHour = Hour(value: Int(timeRecordView?.endHour)),
               let hour = Hour(value: Int(timeRecordView?.hour)) else {
             // TODO: 入力内容を確認し直すようにメッセージを出す
             return
         }
-        let timeRecord = TimeRecord(start: startHour, end: endHour, hour: hour)
-        timeRecordRepository.add(timeRecord: timeRecord)
+        timeRecord.start = startHour
+        timeRecord.end = endHour
+        timeRecord.hour = hour
+        do {
+            try AddTimeRecordUsecase(repository: timeRecordRepository).invoke(timeRecord: timeRecord)
+        } catch(let error) {
+            // TODO: エラーの表示
+            print(error)
+        }
         // TODO: 保存に成功したというメッセージを出す
     }
 }

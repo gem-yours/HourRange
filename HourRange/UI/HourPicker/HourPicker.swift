@@ -22,7 +22,8 @@ public class HourPicker: UIView, LoadableFromNib {
     }
     
     public var text: String? {
-        textField?.text
+        get { textField?.text }
+        set { textField?.text = newValue }
     }
     
     @IBOutlet var label: UILabel?
