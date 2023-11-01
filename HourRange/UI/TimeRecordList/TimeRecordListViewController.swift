@@ -6,12 +6,15 @@ class TimeRecordListViewController: UITableViewController {
     // TODO: DIでリポジトリを注入する
     let viewModel = TimeRecordListViewModel(timeRecordRepository: InmemoryTimeRecordRepository.shared)
     
+    @IBAction func createNew() {
+        performSegue(withIdentifier: "timeRecordViewController", sender: nil)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.register(UINib(nibName: "TimeRecordRow", bundle: nil), forCellReuseIdentifier: "timeRecordRow")
         tableView.estimatedRowHeight = 128
         tableView.rowHeight = UITableView.automaticDimension
-        self.title = "時刻記録の一覧"
     }
     
     override func viewWillAppear(_ animated: Bool) {

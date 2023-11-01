@@ -30,7 +30,6 @@ class TimeRecordViewController: UIViewController, TimeRecordView {
     var viewModel = TimeRecordViewModel(timeRecordRepository: InmemoryTimeRecordRepository.shared)
     
     override func viewDidLoad() {
-        title = "時刻入力"
         viewModel.timeRecordView = self
         setTimeRecord(viewModel.timeRecord)
     }

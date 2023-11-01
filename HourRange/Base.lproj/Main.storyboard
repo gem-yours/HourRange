@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--時刻記録の一覧-->
+        <!--時刻一覧-->
         <scene sceneID="LWZ-e1-9j5">
             <objects>
-                <tableViewController title="時刻記録の一覧" id="MgP-Bp-cIi" customClass="TimeRecordListViewController" customModule="HourRange" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="時刻一覧" id="MgP-Bp-cIi" customClass="TimeRecordListViewController" customModule="HourRange" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="128" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="128" id="eie-lp-Wzg">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -22,7 +22,15 @@
                             <outlet property="prefetchDataSource" destination="MgP-Bp-cIi" id="POL-3h-vfk"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="6sp-Gx-FYK"/>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="時刻一覧" id="Cyk-Tx-zu4">
+                        <barButtonItem key="rightBarButtonItem" title="作成" id="5kQ-aw-tCg" userLabel="create">
+                            <connections>
+                                <action selector="createNew" destination="MgP-Bp-cIi" id="yQP-hf-fsS"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <segue destination="pqT-E9-w5e" kind="show" identifier="timeRecordViewController" id="cfH-gp-5dM"/>
                     </connections>
@@ -81,8 +89,8 @@
                             <constraint firstItem="X7E-SX-yVa" firstAttribute="bottom" secondItem="U5Y-4K-4xf" secondAttribute="bottom" priority="1" id="xvc-Hc-xbL"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="0DO-sP-LIL">
-                        <barButtonItem key="rightBarButtonItem" title="save" id="Hrr-7g-gw4" userLabel="save">
+                    <navigationItem key="navigationItem" title="時刻詳細" id="0DO-sP-LIL">
+                        <barButtonItem key="rightBarButtonItem" title="保存" id="Hrr-7g-gw4" userLabel="save">
                             <connections>
                                 <action selector="saveTimeRecord" destination="pqT-E9-w5e" id="Jk8-hg-Lq1"/>
                             </connections>
