@@ -21,6 +21,8 @@
 		C630B2BB2AEBF7AF00AF56BA /* HourPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C630B2BA2AEBF7AF00AF56BA /* HourPicker.swift */; };
 		C63ACC2E2AF0F8B90022E99F /* LoadableFromNib.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63ACC2D2AF0F8B90022E99F /* LoadableFromNib.swift */; };
 		C666DBFA2AF27BD1005F45B6 /* AddTimeRecordUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C666DBF92AF27BD1005F45B6 /* AddTimeRecordUsecase.swift */; };
+		C666DBFD2AF2B9D9005F45B6 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = C666DBFC2AF2B9D9005F45B6 /* Realm */; };
+		C666DBFF2AF2B9D9005F45B6 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = C666DBFE2AF2B9D9005F45B6 /* RealmSwift */; };
 		C69739012AE78A7800C931F7 /* TimeRecordRow.xib in Resources */ = {isa = PBXBuildFile; fileRef = C69739002AE78A7800C931F7 /* TimeRecordRow.xib */; };
 		C69739032AE78A8A00C931F7 /* TimeRecordRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69739022AE78A8A00C931F7 /* TimeRecordRow.swift */; };
 		C69739072AE78E2F00C931F7 /* TimeRecordListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69739062AE78E2F00C931F7 /* TimeRecordListViewModel.swift */; };
@@ -78,6 +80,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C666DBFF2AF2B9D9005F45B6 /* RealmSwift in Frameworks */,
+				C666DBFD2AF2B9D9005F45B6 /* Realm in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -240,6 +244,10 @@
 			dependencies = (
 			);
 			name = HourRange;
+			packageProductDependencies = (
+				C666DBFC2AF2B9D9005F45B6 /* Realm */,
+				C666DBFE2AF2B9D9005F45B6 /* RealmSwift */,
+			);
 			productName = HourRange;
 			productReference = C62DE6122AE78383000554E7 /* HourRange.app */;
 			productType = "com.apple.product-type.application";
@@ -313,6 +321,9 @@
 				Base,
 			);
 			mainGroup = C62DE6092AE78383000554E7;
+			packageReferences = (
+				C666DBFB2AF2B9D9005F45B6 /* XCRemoteSwiftPackageReference "realm-swift" */,
+			);
 			productRefGroup = C62DE6132AE78383000554E7 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -716,6 +727,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		C666DBFB2AF2B9D9005F45B6 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		C666DBFC2AF2B9D9005F45B6 /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C666DBFB2AF2B9D9005F45B6 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = Realm;
+		};
+		C666DBFE2AF2B9D9005F45B6 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C666DBFB2AF2B9D9005F45B6 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = C62DE60A2AE78383000554E7 /* Project object */;
 }
