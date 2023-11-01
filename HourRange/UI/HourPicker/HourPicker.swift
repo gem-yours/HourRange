@@ -20,15 +20,20 @@ public class HourPicker: UIView, LoadableFromNib {
             textField?.placeholder = placeholder
         }
     }
-    @IBInspectable private var errorDescription: String? = nil {
-        didSet {
-            errorLabel?.text = errorDescription
-        }
+    
+    public var text: String? {
+        textField?.text
     }
     
     @IBOutlet var label: UILabel?
     @IBOutlet var textField: UITextField?
     @IBOutlet var errorLabel: UILabel?
+    
+    private var errorDescription: String? = nil {
+        didSet {
+            errorLabel?.text = errorDescription
+        }
+    }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)

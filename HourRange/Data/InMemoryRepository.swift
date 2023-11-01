@@ -2,6 +2,7 @@ import Foundation
 
 
 public class InmemoryTimeRecordRepository: TimeRecordRepository {
+    public static var shared = InmemoryTimeRecordRepository()
     private var timeRecords = [
         TimeRecord(start: 0, end: 24, hour: 0),
         TimeRecord(start: 6, end: 18, hour: 12),

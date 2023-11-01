@@ -23,7 +23,10 @@ public struct TimeRecord: Identifiable, Equatable {
 public struct Hour: ExpressibleByIntegerLiteral, Comparable {
     let value: Int
     
-    public init?(value: Int) {
+    public init?(value: Int?) {
+        guard let value = value else {
+            return nil
+        }
         guard value >= 0,
               value <= 24 else {
             return nil

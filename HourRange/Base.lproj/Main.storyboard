@@ -82,8 +82,17 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="0DO-sP-LIL">
-                        <barButtonItem key="rightBarButtonItem" title="save" id="Hrr-7g-gw4" userLabel="save"/>
+                        <barButtonItem key="rightBarButtonItem" title="save" id="Hrr-7g-gw4" userLabel="save">
+                            <connections>
+                                <action selector="saveTimeRecord" destination="pqT-E9-w5e" id="Jk8-hg-Lq1"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="endHourPicker" destination="3QP-k4-67H" id="Zs7-F3-kgO"/>
+                        <outlet property="hourPicker" destination="Oqv-2o-7eb" id="MOX-1T-wny"/>
+                        <outlet property="startHourPicker" destination="DgY-Fp-Xar" id="eqx-ye-YcD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8nm-yf-5p6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
