@@ -27,7 +27,7 @@ class TimeRecordViewController: UIViewController, TimeRecordView {
     @IBOutlet var hourPicker: HourPicker?
     
     // TODO: DIでリポジトリを注入する
-    var viewModel = TimeRecordViewModel(timeRecordRepository: InmemoryTimeRecordRepository.shared)
+    var viewModel = TimeRecordViewModel(timeRecordRepository: DatabaseTimeRecordRepository.shared)
     
     override func viewDidLoad() {
         viewModel.timeRecordView = self

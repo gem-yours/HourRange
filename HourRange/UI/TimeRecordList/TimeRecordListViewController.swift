@@ -4,7 +4,7 @@ import UIKit
 
 class TimeRecordListViewController: UITableViewController {
     // TODO: DIでリポジトリを注入する
-    let viewModel = TimeRecordListViewModel(timeRecordRepository: InmemoryTimeRecordRepository.shared)
+    let viewModel = TimeRecordListViewModel(timeRecordRepository: DatabaseTimeRecordRepository.shared)
     
     @IBAction func createNew() {
         performSegue(withIdentifier: "timeRecordViewController", sender: nil)
@@ -19,6 +19,7 @@ class TimeRecordListViewController: UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        viewModel.fetch()
         tableView.reloadData()
     }
     

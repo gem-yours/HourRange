@@ -26,13 +26,14 @@ public struct TimeRecordViewModel {
         timeRecord.start = startHour
         timeRecord.end = endHour
         timeRecord.hour = hour
-        do {
-            try AddTimeRecordUsecase(repository: timeRecordRepository).invoke(timeRecord: timeRecord)
-        } catch(let error) {
-            // TODO: エラーの表示
-            print(error)
+        timeRecordRepository.add(timeRecord: timeRecord) {
+            switch $0 {
+            case .success:
+                break // TODO: 保存に成功したというメッセージを出す
+            case .failure:
+                break // TODO: エラーの表示
+            }
         }
-        // TODO: 保存に成功したというメッセージを出す
     }
 }
 

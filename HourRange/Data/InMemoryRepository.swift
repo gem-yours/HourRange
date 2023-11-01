@@ -9,25 +9,22 @@ public class InmemoryTimeRecordRepository: TimeRecordRepository {
         TimeRecord(start: 5, end: 22, hour: 24)
     ]
     
-    public func getAll() -> [TimeRecord] {
-        timeRecords
+    
+    public func getAll(completion: ((Result<[TimeRecord], RepositoryError>) -> Void)) {
+        completion(.success(timeRecords))
     }
     
-    public func add(timeRecord: TimeRecord) throws {
+    public func add(timeRecord: TimeRecord, completion: ((Result<TimeRecord, RepositoryError>) -> Void)?) {
         guard timeRecords.firstIndex(where: { $0.id == timeRecord.id }) == nil else {
-            throw RepositoryError.alreadyExist
+            completion?(.success(timeRecord))
+            return
         }
         timeRecords.append(timeRecord)
+        completion?(.success(timeRecord))
     }
     
-    public func update(timeRecord: TimeRecord) throws {
-        guard let index = timeRecords.firstIndex(where: { $0.id == timeRecord.id }) else {
-            throw RepositoryError.notExist
-        }
-        timeRecords[index] = timeRecord
-    }
-    
-    public func delete(timeRecord: TimeRecord) {
+    public func delete(timeRecord: TimeRecord, completion: ((Result<TimeRecord, RepositoryError>) -> Void)?) {
         timeRecords.removeAll(where: { $0 == timeRecord })
+        completion?(.success(timeRecord))
     }
 }
