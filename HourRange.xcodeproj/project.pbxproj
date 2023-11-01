@@ -29,6 +29,9 @@
 		C697390A2AE7A98D00C931F7 /* TimeRecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69739092AE7A98D00C931F7 /* TimeRecordViewController.swift */; };
 		C697390C2AE7AA0400C931F7 /* TimeRecordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C697390B2AE7AA0400C931F7 /* TimeRecordViewModel.swift */; };
 		C697390F2AE7AD1300C931F7 /* UITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C697390E2AE7AD1300C931F7 /* UITest.swift */; };
+		C6AFEE1B2AF37D260010888A /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = C6AFEE1A2AF37D260010888A /* RxCocoa */; };
+		C6AFEE1D2AF37D260010888A /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = C6AFEE1C2AF37D260010888A /* RxRelay */; };
+		C6AFEE1F2AF37D260010888A /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = C6AFEE1E2AF37D260010888A /* RxSwift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +50,19 @@
 			remoteInfo = HourRange;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		C60B3A5F2AF37A2B007F36D0 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		C62DE6122AE78383000554E7 /* HourRange.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HourRange.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -80,7 +96,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C6AFEE1B2AF37D260010888A /* RxCocoa in Frameworks */,
 				C666DBFF2AF2B9D9005F45B6 /* RealmSwift in Frameworks */,
+				C6AFEE1F2AF37D260010888A /* RxSwift in Frameworks */,
+				C6AFEE1D2AF37D260010888A /* RxRelay in Frameworks */,
 				C666DBFD2AF2B9D9005F45B6 /* Realm in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -230,6 +249,7 @@
 				C62DE60E2AE78383000554E7 /* Sources */,
 				C62DE60F2AE78383000554E7 /* Frameworks */,
 				C62DE6102AE78383000554E7 /* Resources */,
+				C60B3A5F2AF37A2B007F36D0 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -239,6 +259,9 @@
 			packageProductDependencies = (
 				C666DBFC2AF2B9D9005F45B6 /* Realm */,
 				C666DBFE2AF2B9D9005F45B6 /* RealmSwift */,
+				C6AFEE1A2AF37D260010888A /* RxCocoa */,
+				C6AFEE1C2AF37D260010888A /* RxRelay */,
+				C6AFEE1E2AF37D260010888A /* RxSwift */,
 			);
 			productName = HourRange;
 			productReference = C62DE6122AE78383000554E7 /* HourRange.app */;
@@ -315,6 +338,7 @@
 			mainGroup = C62DE6092AE78383000554E7;
 			packageReferences = (
 				C666DBFB2AF2B9D9005F45B6 /* XCRemoteSwiftPackageReference "realm-swift" */,
+				C6AFEE192AF37D260010888A /* XCRemoteSwiftPackageReference "RxSwift" */,
 			);
 			productRefGroup = C62DE6132AE78383000554E7 /* Products */;
 			projectDirPath = "";
@@ -729,6 +753,14 @@
 				kind = branch;
 			};
 		};
+		C6AFEE192AF37D260010888A /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -741,6 +773,21 @@
 			isa = XCSwiftPackageProductDependency;
 			package = C666DBFB2AF2B9D9005F45B6 /* XCRemoteSwiftPackageReference "realm-swift" */;
 			productName = RealmSwift;
+		};
+		C6AFEE1A2AF37D260010888A /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C6AFEE192AF37D260010888A /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		C6AFEE1C2AF37D260010888A /* RxRelay */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C6AFEE192AF37D260010888A /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxRelay;
+		};
+		C6AFEE1E2AF37D260010888A /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C6AFEE192AF37D260010888A /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
