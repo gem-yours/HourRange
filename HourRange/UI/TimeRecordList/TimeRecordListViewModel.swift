@@ -10,8 +10,8 @@ class TimeRecordListViewModel {
     var timeRecordsEvent = BehaviorSubject(value: [TimeRecord]())
     var error = BehaviorRelay(value: nil as RepositoryError?)
     
-    init(timeRecordRepository: TimeRecordRepository) {
-        self.timeRecordRepository = timeRecordRepository
+    init() {
+        self.timeRecordRepository = Dependencies.shared.container.resolve(TimeRecordRepository.self)!
         fetch()
     }
     

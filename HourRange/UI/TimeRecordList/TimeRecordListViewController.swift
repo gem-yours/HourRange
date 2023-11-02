@@ -4,8 +4,7 @@ import UIKit
 import RxSwift
 
 class TimeRecordListViewController: UITableViewController {
-    // TODO: DIでリポジトリを注入する
-    let viewModel = TimeRecordListViewModel(timeRecordRepository: DatabaseTimeRecordRepository.shared)
+    let viewModel = TimeRecordListViewModel()
     var timeRecords = [TimeRecord]()
     
     private var disposeBag = DisposeBag()
@@ -41,8 +40,7 @@ class TimeRecordListViewController: UITableViewController {
             }
             if let index = sender as? Int {
                 timeRecordViewController.viewModel = TimeRecordViewModel(
-                    timeRecord: timeRecords[index],
-                    timeRecordRepository: DatabaseTimeRecordRepository.shared
+                    timeRecord: timeRecords[index]
                 )
             }
         default:

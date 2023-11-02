@@ -33,8 +33,7 @@ class TimeRecordViewController: UIViewController, TimeRecordView {
     
     private var isShowingToast = false
     
-    // TODO: DIでリポジトリを注入する
-    var viewModel = TimeRecordViewModel(timeRecordRepository: DatabaseTimeRecordRepository.shared)
+    var viewModel = TimeRecordViewModel()
     
     public func showToast(message: String) {
         guard !isShowingToast else {

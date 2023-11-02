@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C6153ED52AF386C8002E7AF4 /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = C6153ED42AF386C8002E7AF4 /* Swinject */; };
+		C6153ED72AF38734002E7AF4 /* Dependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6153ED62AF38734002E7AF4 /* Dependencies.swift */; };
 		C62DE6162AE78383000554E7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62DE6152AE78383000554E7 /* AppDelegate.swift */; };
 		C62DE6182AE78383000554E7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62DE6172AE78383000554E7 /* SceneDelegate.swift */; };
 		C62DE61A2AE78383000554E7 /* TimeRecordListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62DE6192AE78383000554E7 /* TimeRecordListViewController.swift */; };
@@ -66,6 +67,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		C6153ED62AF38734002E7AF4 /* Dependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dependencies.swift; sourceTree = "<group>"; };
 		C62DE6122AE78383000554E7 /* HourRange.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HourRange.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C62DE6152AE78383000554E7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C62DE6172AE78383000554E7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -154,6 +156,7 @@
 				C62DE61E2AE78387000554E7 /* Assets.xcassets */,
 				C62DE6202AE78387000554E7 /* LaunchScreen.storyboard */,
 				C62DE6232AE78387000554E7 /* Info.plist */,
+				C6153ED62AF38734002E7AF4 /* Dependencies.swift */,
 			);
 			path = HourRange;
 			sourceTree = "<group>";
@@ -389,6 +392,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C6153ED72AF38734002E7AF4 /* Dependencies.swift in Sources */,
 				C630B2BB2AEBF7AF00AF56BA /* HourPicker.swift in Sources */,
 				C62DE61A2AE78383000554E7 /* TimeRecordListViewController.swift in Sources */,
 				C62DE64C2AE78473000554E7 /* TimeRecord.swift in Sources */,

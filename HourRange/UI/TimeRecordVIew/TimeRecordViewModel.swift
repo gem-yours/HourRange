@@ -7,13 +7,9 @@ public class TimeRecordViewModel {
     private let timeRecordRepository: TimeRecordRepository
     weak var timeRecordView: TimeRecordView?
     
-    init(
-        timeRecord: TimeRecord? = nil,
-        timeRecordRepository: TimeRecordRepository
-        
-    ) {
+    init(timeRecord: TimeRecord? = nil) {
         self.timeRecord = timeRecord ?? TimeRecord(start: 0, end: 0, hour: 0)
-        self.timeRecordRepository = timeRecordRepository
+        self.timeRecordRepository = Dependencies.shared.container.resolve(TimeRecordRepository.self)!
     }
     
     func save() {
