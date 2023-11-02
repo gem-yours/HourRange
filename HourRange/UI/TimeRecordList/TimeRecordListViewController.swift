@@ -1,10 +1,14 @@
 //
 
 import UIKit
+import RxSwift
 
 class TimeRecordListViewController: UITableViewController {
     // TODO: DIでリポジトリを注入する
     let viewModel = TimeRecordListViewModel(timeRecordRepository: DatabaseTimeRecordRepository.shared)
+    var timeRecords = [TimeRecord]()
+    
+    private var disposeBag = DisposeBag()
     
     @IBAction func createNew() {
         performSegue(withIdentifier: "timeRecordViewController", sender: nil)
@@ -15,12 +19,18 @@ class TimeRecordListViewController: UITableViewController {
         tableView.register(UINib(nibName: "TimeRecordRow", bundle: nil), forCellReuseIdentifier: "timeRecordRow")
         tableView.estimatedRowHeight = 128
         tableView.rowHeight = UITableView.automaticDimension
+        viewModel.timeRecordsEvent.subscribe { timeRecords in
+            self.timeRecords = timeRecords
+            self.tableView.reloadData()
+        }.disposed(by: disposeBag)
+        viewModel.error.subscribe { value in
+            // TODO: エラーの表示
+        }.disposed(by: disposeBag)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         viewModel.fetch()
-        tableView.reloadData()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -31,8 +41,8 @@ class TimeRecordListViewController: UITableViewController {
             }
             if let index = sender as? Int {
                 timeRecordViewController.viewModel = TimeRecordViewModel(
-                    timeRecord: viewModel.timeRecords[index],
-                    timeRecordRepository: InmemoryTimeRecordRepository.shared
+                    timeRecord: timeRecords[index],
+                    timeRecordRepository: DatabaseTimeRecordRepository.shared
                 )
             }
         default:
@@ -44,14 +54,14 @@ class TimeRecordListViewController: UITableViewController {
 // MARK: UItableViewDelegate/DataSource
 extension TimeRecordListViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        viewModel.timeRecords.count
+        timeRecords.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let timeRecordRow = tableView.dequeueReusableCell(withIdentifier: "timeRecordRow", for: indexPath) as? TimeRecordRow else {
             return UITableViewCell()
         }
-        timeRecordRow.timeRecord = viewModel.timeRecords[indexPath.row]
+        timeRecordRow.timeRecord = timeRecords[indexPath.row]
         
         return timeRecordRow
     }

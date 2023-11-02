@@ -4,10 +4,17 @@ import Foundation
 
 
 public struct TimeRecord: Identifiable, Equatable {
-    public let id = UUID()
+    public let id: UUID
     public var start: Hour
     public var end: Hour
     public var hour: Hour
+    
+    init(id: UUID = UUID(), start: Hour, end: Hour, hour: Hour) {
+        self.id = id
+        self.start = start
+        self.end = end
+        self.hour = hour
+    }
     
     public var isContained: Bool {
         if start == end {

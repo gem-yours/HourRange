@@ -44,7 +44,7 @@ public struct DatabaseTimeRecordRepository: TimeRecordRepository {
         case .success(let realm):
             do {
                 try realm.write {
-                    realm.add(timeRecord.model)
+                    realm.add(timeRecord.model, update: .modified)
                 }
             } catch (let error) {
                 return .failure(.databaseError(error.localizedDescription))
@@ -111,12 +111,13 @@ class TimeRecordModel: RealmSwiftObject {
 
 extension TimeRecordModel {
     var timeRecord: TimeRecord? {
-        guard let startHour = Hour(value: start),
+        guard let id = UUID(uuidString: id),
+              let startHour = Hour(value: start),
               let endHour = Hour(value: end),
               let hour = Hour(value: self.hour) else {
             return nil
         }
-        return TimeRecord(start: startHour, end: endHour, hour: hour)
+        return TimeRecord(id: id, start: startHour, end: endHour, hour: hour)
     }
 }
 

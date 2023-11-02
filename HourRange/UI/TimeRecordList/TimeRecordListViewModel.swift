@@ -1,11 +1,14 @@
 //
 
 import UIKit
+import RxSwift
+import RxRelay
 
 
 class TimeRecordListViewModel {
     let timeRecordRepository: TimeRecordRepository
-    var timeRecords = [TimeRecord]()
+    var timeRecordsEvent = BehaviorSubject(value: [TimeRecord]())
+    var error = BehaviorRelay(value: nil as RepositoryError?)
     
     init(timeRecordRepository: TimeRecordRepository) {
         self.timeRecordRepository = timeRecordRepository
@@ -16,10 +19,9 @@ class TimeRecordListViewModel {
         timeRecordRepository.getAll { [weak self] in
             switch $0 {
             case .success(let timeRecords):
-                self?.timeRecords = timeRecords
-            case .failure:
-                // TODO: エラーの表示
-                break
+                self?.timeRecordsEvent.onNext(timeRecords)
+            case .failure(let error):
+                self?.error.accept(error)
             }
         }
     }

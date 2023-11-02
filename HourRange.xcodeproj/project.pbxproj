@@ -15,7 +15,7 @@
 		C62DE6222AE78387000554E7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C62DE6202AE78387000554E7 /* LaunchScreen.storyboard */; };
 		C62DE62D2AE78387000554E7 /* TimeRecordTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62DE62C2AE78387000554E7 /* TimeRecordTest.swift */; };
 		C62DE64A2AE78473000554E7 /* TimeRecordRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62DE6472AE78473000554E7 /* TimeRecordRepository.swift */; };
-		C62DE64B2AE78473000554E7 /* InMemoryRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62DE6482AE78473000554E7 /* InMemoryRepository.swift */; };
+		C62DE64B2AE78473000554E7 /* InTimeRecordMemoryRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62DE6482AE78473000554E7 /* InTimeRecordMemoryRepository.swift */; };
 		C62DE64C2AE78473000554E7 /* TimeRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62DE6492AE78473000554E7 /* TimeRecord.swift */; };
 		C630B2B82AEBF78D00AF56BA /* HourPicker.xib in Resources */ = {isa = PBXBuildFile; fileRef = C630B2B72AEBF78D00AF56BA /* HourPicker.xib */; };
 		C630B2BB2AEBF7AF00AF56BA /* HourPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C630B2BA2AEBF7AF00AF56BA /* HourPicker.swift */; };
@@ -77,7 +77,7 @@
 		C62DE62C2AE78387000554E7 /* TimeRecordTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeRecordTest.swift; sourceTree = "<group>"; };
 		C62DE6322AE78387000554E7 /* HourRangeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HourRangeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C62DE6472AE78473000554E7 /* TimeRecordRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeRecordRepository.swift; sourceTree = "<group>"; };
-		C62DE6482AE78473000554E7 /* InMemoryRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InMemoryRepository.swift; sourceTree = "<group>"; };
+		C62DE6482AE78473000554E7 /* InTimeRecordMemoryRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InTimeRecordMemoryRepository.swift; sourceTree = "<group>"; };
 		C62DE6492AE78473000554E7 /* TimeRecord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeRecord.swift; sourceTree = "<group>"; };
 		C630B2B72AEBF78D00AF56BA /* HourPicker.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HourPicker.xib; sourceTree = "<group>"; };
 		C630B2BA2AEBF7AF00AF56BA /* HourPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourPicker.swift; sourceTree = "<group>"; };
@@ -176,7 +176,7 @@
 			isa = PBXGroup;
 			children = (
 				C62DE6472AE78473000554E7 /* TimeRecordRepository.swift */,
-				C62DE6482AE78473000554E7 /* InMemoryRepository.swift */,
+				C62DE6482AE78473000554E7 /* InTimeRecordMemoryRepository.swift */,
 				C62DE6492AE78473000554E7 /* TimeRecord.swift */,
 				C666DC002AF2BA0C005F45B6 /* DatabaseTimeRecordRecordRepository.swift */,
 			);
@@ -394,7 +394,7 @@
 				C63ACC2E2AF0F8B90022E99F /* LoadableFromNib.swift in Sources */,
 				C62DE6182AE78383000554E7 /* SceneDelegate.swift in Sources */,
 				C69739032AE78A8A00C931F7 /* TimeRecordRow.swift in Sources */,
-				C62DE64B2AE78473000554E7 /* InMemoryRepository.swift in Sources */,
+				C62DE64B2AE78473000554E7 /* InTimeRecordMemoryRepository.swift in Sources */,
 				C69739072AE78E2F00C931F7 /* TimeRecordListViewModel.swift in Sources */,
 				C62DE64A2AE78473000554E7 /* TimeRecordRepository.swift in Sources */,
 				C697390A2AE7A98D00C931F7 /* TimeRecordViewController.swift in Sources */,
