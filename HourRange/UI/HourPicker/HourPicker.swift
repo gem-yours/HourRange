@@ -65,6 +65,10 @@ public class HourPicker: UIView, LoadableFromNib {
 
 extension HourPicker: UITextFieldDelegate {
     public func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        guard string != "\n" else {
+            return false
+        }
+        
         guard let old = textField.text,
               let replaceRange = Range(range, in: old) else {
             return true
