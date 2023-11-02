@@ -49,10 +49,10 @@ public struct DatabaseTimeRecordRepository: TimeRecordRepository {
             } catch (let error) {
                 return .failure(.databaseError(error.localizedDescription))
             }
+            return .success(timeRecord)
         case .failure(let error):
             return .failure(error)
         }
-        return .failure(.unknown)
     }
     
     public func delete(timeRecord: TimeRecord, completion: ((Result<TimeRecord, RepositoryError>) -> Void)?) {
@@ -74,10 +74,10 @@ public struct DatabaseTimeRecordRepository: TimeRecordRepository {
             } catch (let error) {
                 return .failure(.databaseError(error.localizedDescription))
             }
+            return .success(timeRecord)
         case .failure(let error):
             return .failure(error)
         }
-        return .failure(.unknown)
     }
 
     

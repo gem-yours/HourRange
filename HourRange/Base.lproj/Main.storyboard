@@ -79,13 +79,27 @@
                                     </view>
                                 </subviews>
                             </stackView>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lNe-qi-AG5" userLabel="Toast">
+                                <rect key="frame" x="194.33333333333334" y="732.66666666666663" width="4.6666666666666572" height="20.333333333333371"/>
+                                <color key="backgroundColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" systemColor="systemBackgroundColor"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="16"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="X7E-SX-yVa"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="U5Y-4K-4xf" firstAttribute="top" secondItem="X7E-SX-yVa" secondAttribute="top" id="8jD-qC-yG0"/>
+                            <constraint firstItem="lNe-qi-AG5" firstAttribute="centerX" secondItem="WKh-l1-GBy" secondAttribute="centerX" id="KNI-lr-QCf"/>
                             <constraint firstItem="U5Y-4K-4xf" firstAttribute="leading" secondItem="X7E-SX-yVa" secondAttribute="leading" id="X20-GR-NoI"/>
                             <constraint firstItem="X7E-SX-yVa" firstAttribute="trailing" secondItem="U5Y-4K-4xf" secondAttribute="trailing" id="cmo-qs-Yhs"/>
+                            <constraint firstItem="lNe-qi-AG5" firstAttribute="bottom" secondItem="X7E-SX-yVa" secondAttribute="bottom" constant="-16" id="cni-5R-4oi"/>
                             <constraint firstItem="X7E-SX-yVa" firstAttribute="bottom" secondItem="U5Y-4K-4xf" secondAttribute="bottom" priority="1" id="xvc-Hc-xbL"/>
                         </constraints>
                     </view>
@@ -100,6 +114,7 @@
                         <outlet property="endHourPicker" destination="3QP-k4-67H" id="Zs7-F3-kgO"/>
                         <outlet property="hourPicker" destination="Oqv-2o-7eb" id="MOX-1T-wny"/>
                         <outlet property="startHourPicker" destination="DgY-Fp-Xar" id="eqx-ye-YcD"/>
+                        <outlet property="toast" destination="lNe-qi-AG5" id="sVC-Xb-6v9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8nm-yf-5p6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -126,6 +141,9 @@
         </scene>
     </scenes>
     <resources>
+        <systemColor name="labelColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
