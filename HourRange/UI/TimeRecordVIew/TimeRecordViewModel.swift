@@ -1,28 +1,45 @@
 //
 
 import Foundation
+import RxSwift
+import RxRelay
 
 public class TimeRecordViewModel {
-    public private(set) var timeRecord: TimeRecord
+    public var timeRecord: BehaviorRelay<TimeRecord>
     private let timeRecordRepository: TimeRecordRepository
-    weak var timeRecordView: TimeRecordView?
+    
+    private var disposeBag = DisposeBag()
+    weak var timeRecordView: TimeRecordView? {
+        didSet {
+            guard let timeRecordView = timeRecordView else {
+                return
+            }
+            Observable
+                .combineLatest(timeRecordView.startHour, timeRecordView.endHour, timeRecordView.hour)
+                .subscribe { start, end, hour in
+                    var timeRecord = self.timeRecord.value
+                    if let startHour = Hour(value: Int(start)) {
+                        timeRecord.start = startHour
+                    }
+                    if let endHour = Hour(value: Int(end)) {
+                        timeRecord.end = endHour
+                    }
+                    if let newHour = Hour(value: Int(hour)) {
+                        timeRecord.end = newHour
+                    }
+                    self.timeRecord.accept(timeRecord)
+                }
+                .disposed(by: disposeBag)
+        }
+    }
     
     init(timeRecord: TimeRecord? = nil) {
-        self.timeRecord = timeRecord ?? TimeRecord(start: 0, end: 0, hour: 0)
+        self.timeRecord = BehaviorRelay(value: timeRecord ?? TimeRecord(start: 0, end: 0, hour: 0))
         self.timeRecordRepository = Dependencies.shared.container.resolve(TimeRecordRepository.self)!
     }
     
     func save() {
-        guard let startHour = Hour(value: Int(timeRecordView?.startHour)),
-              let endHour = Hour(value: Int(timeRecordView?.endHour)),
-              let hour = Hour(value: Int(timeRecordView?.hour)) else {
-            timeRecordView?.showToast(message: "入力内容を確認してください")
-            return
-        }
-        timeRecord.start = startHour
-        timeRecord.end = endHour
-        timeRecord.hour = hour
-        timeRecordRepository.add(timeRecord: timeRecord) { [weak self] in
+        timeRecordRepository.add(timeRecord: timeRecord.value) { [weak self] in
             switch $0 {
             case .success:
                 self?.timeRecordView?.showToast(message: "保存に成功しました")

@@ -1,6 +1,9 @@
 //
 
 import UIKit
+import RxCocoa
+import RxSwift
+import RxRelay
 
 
 @IBDesignable
@@ -21,19 +24,32 @@ public class HourPicker: UIView, LoadableFromNib {
         }
     }
     
-    public var text: String? {
-        get { textField?.text }
-        set { textField?.text = newValue }
-    }
+    public var text = BehaviorRelay<String?>(value: nil)
     
     @IBOutlet var label: UILabel?
-    @IBOutlet var textField: UITextField?
+    @IBOutlet var textField: UITextField? {
+        didSet {
+            guard let textField = textField else {
+                return
+            }
+            textField.rx.text.asObservable().subscribe {
+                self.text.accept($0)
+            }.disposed(by: disposeBag)
+        }
+    }
     @IBOutlet var errorLabel: UILabel?
     
     private var errorDescription: String? = nil {
         didSet {
             errorLabel?.text = errorDescription
         }
+    }
+    
+    private var disposeBag = DisposeBag()
+    
+    
+    public func setText(_ text: String) {
+        textField?.text = text
     }
     
     required init?(coder aDecoder: NSCoder) {

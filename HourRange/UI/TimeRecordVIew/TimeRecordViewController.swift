@@ -1,30 +1,23 @@
 //
 
 import UIKit
+import RxCocoa
 import RxSwift
+import RxRelay
 
 protocol TimeRecordView: AnyObject {
-    var startHour: String? { get set }
-    var endHour: String? { get set }
-    var hour: String? { get set }
+    var startHour: BehaviorRelay<String?> { get }
+    var endHour: BehaviorRelay<String?> { get }
+    var hour: BehaviorRelay<String?> { get }
     
     func showToast(message: String)
 }
 
 class TimeRecordViewController: UIViewController, TimeRecordView {
     // TODO: RxSwiftでBindingできるようにする
-    var startHour: String? {
-        get { startHourPicker?.text }
-        set { startHourPicker?.text = newValue }
-    }
-    var endHour: String? {
-        get { endHourPicker?.text }
-        set { endHourPicker?.text = newValue }
-    }
-    var hour: String? {
-        get { hourPicker?.text }
-        set { hourPicker?.text = newValue }
-    }
+    var startHour = BehaviorRelay<String?>(value: nil)
+    var endHour = BehaviorRelay<String?>(value: nil)
+    var hour = BehaviorRelay<String?>(value: nil)
     
     @IBOutlet var startHourPicker: HourPicker?
     @IBOutlet var endHourPicker: HourPicker?
@@ -34,6 +27,7 @@ class TimeRecordViewController: UIViewController, TimeRecordView {
     private var isShowingToast = false
     
     var viewModel = TimeRecordViewModel()
+    private var disposeBag = DisposeBag()
     
     public func showToast(message: String) {
         guard !isShowingToast else {
@@ -54,7 +48,11 @@ class TimeRecordViewController: UIViewController, TimeRecordView {
     
     override func viewDidLoad() {
         viewModel.timeRecordView = self
-        setTimeRecord(viewModel.timeRecord)
+        startHourPicker?.text.bind(to: startHour).disposed(by: disposeBag)
+        endHourPicker?.text.bind(to: endHour).disposed(by: disposeBag)
+        hourPicker?.text.bind(to: hour).disposed(by: disposeBag)
+        
+        setTimeRecord(viewModel.timeRecord.value)
     }
     
     @IBAction func saveTimeRecord() {
@@ -64,8 +62,8 @@ class TimeRecordViewController: UIViewController, TimeRecordView {
 
 extension TimeRecordViewController {
     func setTimeRecord(_ timeRecord: TimeRecord) {
-        startHour = String(timeRecord.start.value)
-        endHour = String(timeRecord.end.value)
-        hour = String(timeRecord.hour.value)
+        startHourPicker?.setText(String(timeRecord.start.value))
+        endHourPicker?.setText(String(timeRecord.end.value))
+        hourPicker?.setText(String(timeRecord.hour.value))
     }
 }

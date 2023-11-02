@@ -18,6 +18,7 @@ class TimeRecordListViewController: UITableViewController {
         tableView.register(UINib(nibName: "TimeRecordRow", bundle: nil), forCellReuseIdentifier: "timeRecordRow")
         tableView.estimatedRowHeight = 128
         tableView.rowHeight = UITableView.automaticDimension
+        
         viewModel.timeRecordsEvent.subscribe { timeRecords in
             self.timeRecords = timeRecords
             self.tableView.reloadData()
