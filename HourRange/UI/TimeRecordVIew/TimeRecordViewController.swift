@@ -22,6 +22,18 @@ class TimeRecordViewController: UIViewController, TimeRecordView {
     @IBOutlet var startHourPicker: HourPicker?
     @IBOutlet var endHourPicker: HourPicker?
     @IBOutlet var hourPicker: HourPicker?
+    @IBOutlet var isContainedLabel: UILabel? {
+        didSet {
+            guard let isContainedLabel = isContainedLabel else {
+                return
+            }
+            viewModel.timeRecord.map {
+                $0.isContained ? "含まれています" : "含まれていません"
+            }
+            .subscribe(isContainedLabel.rx.text.asObserver())
+            .disposed(by: disposeBag)
+        }
+    }
     @IBOutlet var toast: UILabel?
     
     private var isShowingToast = false

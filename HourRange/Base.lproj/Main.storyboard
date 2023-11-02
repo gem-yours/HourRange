@@ -91,11 +91,19 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CIE-eX-tjs" userLabel="isContained">
+                                <rect key="frame" x="8" y="327" width="4.6666666666666679" height="20.333333333333314"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="X7E-SX-yVa"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="CIE-eX-tjs" firstAttribute="leading" secondItem="X7E-SX-yVa" secondAttribute="leading" constant="8" id="7CR-Op-5A9"/>
                             <constraint firstItem="U5Y-4K-4xf" firstAttribute="top" secondItem="X7E-SX-yVa" secondAttribute="top" id="8jD-qC-yG0"/>
+                            <constraint firstItem="CIE-eX-tjs" firstAttribute="top" secondItem="U5Y-4K-4xf" secondAttribute="bottom" constant="32" id="KDG-t4-h6M"/>
                             <constraint firstItem="lNe-qi-AG5" firstAttribute="centerX" secondItem="WKh-l1-GBy" secondAttribute="centerX" id="KNI-lr-QCf"/>
                             <constraint firstItem="U5Y-4K-4xf" firstAttribute="leading" secondItem="X7E-SX-yVa" secondAttribute="leading" id="X20-GR-NoI"/>
                             <constraint firstItem="X7E-SX-yVa" firstAttribute="trailing" secondItem="U5Y-4K-4xf" secondAttribute="trailing" id="cmo-qs-Yhs"/>
@@ -113,6 +121,7 @@
                     <connections>
                         <outlet property="endHourPicker" destination="3QP-k4-67H" id="Zs7-F3-kgO"/>
                         <outlet property="hourPicker" destination="Oqv-2o-7eb" id="MOX-1T-wny"/>
+                        <outlet property="isContainedLabel" destination="CIE-eX-tjs" id="kbn-MM-jTx"/>
                         <outlet property="startHourPicker" destination="DgY-Fp-Xar" id="eqx-ye-YcD"/>
                         <outlet property="toast" destination="lNe-qi-AG5" id="sVC-Xb-6v9"/>
                     </connections>
