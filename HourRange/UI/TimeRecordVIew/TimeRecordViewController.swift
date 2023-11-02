@@ -14,7 +14,6 @@ protocol TimeRecordView: AnyObject {
 }
 
 class TimeRecordViewController: UIViewController, TimeRecordView {
-    // TODO: RxSwiftでBindingできるようにする
     var startHour = BehaviorRelay<String?>(value: nil)
     var endHour = BehaviorRelay<String?>(value: nil)
     var hour = BehaviorRelay<String?>(value: nil)

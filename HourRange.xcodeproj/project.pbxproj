@@ -148,6 +148,7 @@
 		C62DE6142AE78383000554E7 /* HourRange */ = {
 			isa = PBXGroup;
 			children = (
+				C6153ED62AF38734002E7AF4 /* Dependencies.swift */,
 				C69738FE2AE78A0600C931F7 /* UI */,
 				C62DE6462AE78473000554E7 /* Data */,
 				C62DE6152AE78383000554E7 /* AppDelegate.swift */,
@@ -156,7 +157,6 @@
 				C62DE61E2AE78387000554E7 /* Assets.xcassets */,
 				C62DE6202AE78387000554E7 /* LaunchScreen.storyboard */,
 				C62DE6232AE78387000554E7 /* Info.plist */,
-				C6153ED62AF38734002E7AF4 /* Dependencies.swift */,
 			);
 			path = HourRange;
 			sourceTree = "<group>";

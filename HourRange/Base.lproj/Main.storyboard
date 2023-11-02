@@ -72,7 +72,7 @@
                                         <rect key="frame" x="0.0" y="128" width="393" height="64"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="labelText" value="終了時刻"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="labelText" value="時刻"/>
                                             <userDefinedRuntimeAttribute type="string" keyPath="defaultHour" value="0"/>
                                             <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="0 ~ 24の数値を入力"/>
                                         </userDefinedRuntimeAttributes>

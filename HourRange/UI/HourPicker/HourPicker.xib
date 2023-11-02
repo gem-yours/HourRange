@@ -37,13 +37,16 @@
                             <rect key="frame" x="0.0" y="30" width="377" height="34"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="poQ-nP-ph9" userLabel="Label">
-                                    <rect key="frame" x="0.0" y="0.0" width="4" height="34"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="64" height="34"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="64" id="Qqy-Rp-ZGZ"/>
+                                    </constraints>
                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VmY-0S-iRV" userLabel="HourTextField">
-                                    <rect key="frame" x="8" y="0.0" width="369" height="34"/>
+                                    <rect key="frame" x="68" y="0.0" width="309" height="34"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <textInputTraits key="textInputTraits"/>
                                     <connections>
